@@ -9,7 +9,7 @@ export default function UserFlow() {
   const [level, setLever] = useState<number>(1);
   const [points, setPoints] = useState<number>(1);
 
-  const [isActiveBooster, setActiveBooster] = useState<boolean>(false);
+  const [isActiveBooster, setActiveBooster] = useState<any>(false);
   const boostTime = useRef(30);
 
   if (exp >= 100) {
@@ -46,7 +46,7 @@ export default function UserFlow() {
           onClick={activeBoosterHandler}
           disabled={level > 3 || level < 2 || isActiveBooster}
         >
-          {isActiveBooster ? boostTime : "x5"}
+          {isActiveBooster ? `${boostTime}` : "x5"}
         </Button>
       </div>
     </div>
