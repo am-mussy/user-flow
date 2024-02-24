@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { Progress } from "@/components/ui/progress";
 import { Button } from "@/components/ui/button";
 import { useRef, useState } from "react";
@@ -28,7 +27,7 @@ export default function UserFlow() {
     setActiveBooster(true);
     boostTime.current = 30;
     setTimeout(() => {
-      setBoostTime(boostTime.current - 1);
+      boostTime.current--;
     }, 1000);
   };
 
