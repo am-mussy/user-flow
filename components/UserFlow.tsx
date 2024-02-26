@@ -1,8 +1,9 @@
 "use client";
 
-import { Progress } from "@/components/ui/progress";
-import { Button } from "@/components/ui/button";
+import { Progress } from "@/shared/ui/progress";
+import { Button } from "@/shared/ui/button";
 import { useRef, useState } from "react";
+import { useSession } from "next-auth/react";
 
 export default function UserFlow() {
   const [exp, setExp] = useState<number>(1);
@@ -12,6 +13,9 @@ export default function UserFlow() {
   const [isActiveBooster, setActiveBooster] = useState<any>(false);
   const boostTime = useRef(30);
 
+  const data = useSession();
+
+  console.log(data);
   if (exp >= 100) {
     setExp(0);
     setLever(level + 1);
